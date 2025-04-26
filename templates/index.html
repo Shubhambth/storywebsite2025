@@ -171,7 +171,7 @@
                     </h2>
                     <div class="grid grid-cols-2 gap-3">
                         {% for category in categories %}
-                        <a href="" class="bg-yellow-50 hover:bg-yellow-100 text-yellow-800 py-2 px-3 text-center text-sm font-medium transition-all flex items-center justify-center">
+                        <a href="{% url 'category_posts' slug=category.slug %}" class="bg-yellow-50 hover:bg-yellow-100 text-yellow-800 py-2 px-3 text-center text-sm font-medium transition-all flex items-center justify-center">
                             <span>{{ category.name }}</span>
                         </a>
                         {% endfor %}

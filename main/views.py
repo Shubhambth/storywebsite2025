@@ -24,3 +24,13 @@ def detailpost(request,slug):
     related_posts = Post.objects.filter(category=post.category).exclude(id=post.id)[:3]
     
     return render(request,'detailpage.html',{'post':post,'related_posts': related_posts})
+
+
+def category_posts(request, slug):
+    category = get_object_or_404(Category, slug=slug)
+    posts = Post.objects.filter(category=category).order_by('-views')
+
+    return render(request, 'category_posts.html', {
+        'category': category,
+        'posts': posts
+    })
