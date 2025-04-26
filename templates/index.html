@@ -92,7 +92,7 @@
                     {% for post in posts %}
                     <div class="bg-white shadow-lg border border-gray-100 p-6 card">
                         <h2 class="text-2xl font-bold text-yellow-900 mb-3">
-                            <a href="" class="hover:text-yellow-600 transition-all">{{ post.title }}</a>
+                            <a href="{% url 'detailpost' post.slug%}" class="hover:text-yellow-600 transition-all">{{ post.title }}</a>
                         </h2>
                         <div class="flex flex-wrap items-center text-sm text-gray-500 mb-3">
                             <span class="mr-4 flex items-center">
@@ -123,7 +123,7 @@
                                 </svg>
                                 Admin
                             </span>
-                            <a href="" class="px-4 py-2 bg-yellow-600 text-white hover:bg-yellow-700 transition-all text-sm font-medium">Read More</a>
+                            <a href="{% url 'detailpost' post.slug%}" class="px-4 py-2 bg-yellow-600 text-white hover:bg-yellow-700 transition-all text-sm font-medium">Read More</a>
                         </div>
                     </div>
                     {% endfor %}
@@ -151,7 +151,7 @@
                     <ul class="space-y-4">
                         {% for post in popular_posts %}
                         <li class="border-b border-gray-100 pb-3 last:border-0 last:pb-0">
-                            <a href="" class="text-yellow-900 hover:text-yellow-600 font-medium transition-all flex items-start">
+                            <a href="{% url 'detailpost' post.slug%}" class="text-yellow-900 hover:text-yellow-600 font-medium transition-all flex items-start">
                                 <span class="inline-block bg-yellow-100 text-yellow-800 w-6 h-6 flex items-center justify-center text-xs mr-2 mt-1">{{ forloop.counter }}</span>
                                 <span>{{ post.title }}</span>
                             </a>
