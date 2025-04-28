@@ -1,5 +1,6 @@
 from django.shortcuts import render ,  get_object_or_404
 from .models import Post, Category, Tag
+from django.db.models import Q
 
 def index(request):
     posts = Post.objects.select_related('category').prefetch_related('tags').order_by('-created_at')
@@ -34,3 +35,19 @@ def category_posts(request, slug):
         'category': category,
         'posts': posts
     })
+
+
+
+
+def search_posts(request):
+    query = request.GET.get('q')
+    posts = []
+
+    if query:
+        posts = Post.objects.filter(Q(title__icontains=query)).order_by('-id')
+
+    return render(request, 'search_results.html', {
+        'query': query,
+        'posts': posts,
+    })
+
