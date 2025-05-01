@@ -27,6 +27,7 @@
                     <li><a href="/" class="text-gray-200 hover:text-yellow-300 transition-all">Home</a></li>
                     <li><a href="/#popular-posts" class="text-gray-200 hover:text-yellow-300 transition-all">Popular</a></li>
                     <li><a href="/#categories" class="text-gray-200 hover:text-yellow-300 transition-all">Categories</a></li>
+                    <li><a href="{% url 'contact' %}" class="text-gray-200 hover:text-yellow-300 transition-all">Contact</a></li>
                 </ul>
                 
                 <button id="menu-toggle" class="block md:hidden text-gray-200 focus:outline-none p-2 rounded hover:bg-yellow-800 transition-all">
@@ -78,7 +79,7 @@
         </div>
 
         <!-- Share Buttons -->
-        <div class="bg-white shadow-lg rounded-lg p-6 mb-8">
+        <!-- <div class="bg-white shadow-lg rounded-lg p-6 mb-8">
             <h2 class="text-lg font-semibold mb-4 text-yellow-900">Share This Story</h2>
             <div class="flex space-x-4">
                 <a href="#" class="bg-blue-600 text-white p-2 rounded-full hover:bg-blue-700 transition-all">
@@ -94,18 +95,18 @@
                     <i class="fas fa-envelope w-5 h-5 flex items-center justify-center"></i>
                 </a>
             </div>
-        </div>
+        </div> -->
 
         <!-- Comments Section -->
-        <div class="bg-white shadow-lg rounded-lg overflow-hidden mb-8">
+        <!-- <div class="bg-white shadow-lg rounded-lg overflow-hidden mb-8">
             <div class="p-6 md:p-8">
                 <h2 class="text-xl font-bold mb-6 text-yellow-900 flex items-center">
                     <i class="far fa-comments mr-2"></i>
                     Comments <span class="ml-2 bg-yellow-100 text-yellow-800 px-2 py-1 rounded-full text-sm">{{ comments.count }}</span>
-                </h2>
+                </h2> -->
                 
                 <!-- List Comments -->
-                <div class="space-y-6">
+                <!-- <div class="space-y-6">
                     {% for comment in comments %}
                     <div class="border-l-4 border-yellow-200 pl-4 py-1">
                         <div class="flex items-center">
@@ -129,10 +130,10 @@
                     {% endfor %}
                 </div>
             </div>
-        </div>
+        </div> -->
 
         <!-- Add Comment Form -->
-        <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+        <!-- <div class="bg-white shadow-lg rounded-lg overflow-hidden">
             <div class="p-6 md:p-8">
                 <h2 class="text-xl font-bold mb-6 text-yellow-900 flex items-center">
                     <i class="far fa-edit mr-2"></i>
@@ -174,7 +175,7 @@
                 </form>
             </div>
         </div>
-    </main>
+    </main> -->
 
     <!-- Related Posts -->
     <section class="container mx-auto px-4 py-8">

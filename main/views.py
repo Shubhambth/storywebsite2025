@@ -51,3 +51,6 @@ def search_posts(request):
         'posts': posts,
     })
 
+def contact(request):
+    return render(request,"contact.html")
+
