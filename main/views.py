@@ -20,8 +20,8 @@ def index(request):
 
 def detailpost(request,slug):
     post = get_object_or_404(Post,slug=slug)
-    # post.views += 1
-    # post.save(update_fields=['views'])
+    post.views += 1
+    post.save(update_fields=['views'])
     related_posts = Post.objects.filter(category=post.category).exclude(id=post.id)[:3]
     
     return render(request,'detailpage.html',{'post':post,'related_posts': related_posts})
