@@ -4,8 +4,8 @@ from django.db.models import Q
 from django.core.paginator import Paginator
 
 def index(request):
-    ## posts = Post.objects.select_related('category').prefetch_related('tags').order_by('-created_at')
-    posts = Post.objects.all()
+    ## posts = 
+    posts = Post.objects.select_related('category').prefetch_related('tags').order_by('-created_at')
     paginator = Paginator(posts, 5)
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
@@ -14,7 +14,7 @@ def index(request):
 
     categories = Category.objects.all()
     tags = Tag.objects.all()
-    popular_posts = Post.objects.order_by('-views')[:10]
+    popular_posts = Post.objects.order_by('-views')[:5]
 
     context = {
         'posts':  page_obj,
