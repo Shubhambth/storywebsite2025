@@ -1,18 +1,27 @@
 from django.shortcuts import render ,  get_object_or_404
 from .models import Post, Category, Tag
 from django.db.models import Q
+from django.core.paginator import Paginator
 
 def index(request):
-    posts = Post.objects.select_related('category').prefetch_related('tags').order_by('-created_at')
+    ## posts = Post.objects.select_related('category').prefetch_related('tags').order_by('-created_at')
+    posts = Post.objects.all()
+    paginator = Paginator(posts, 5)
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+
+
+
     categories = Category.objects.all()
     tags = Tag.objects.all()
-    popular_posts = Post.objects.order_by('-views')[:5]
+    popular_posts = Post.objects.order_by('-views')[:10]
 
     context = {
-        'posts': posts,
+        'posts':  page_obj,
         'categories': categories,
         'tags': tags,
-        'popular_posts': popular_posts
+        'popular_posts': popular_posts,
+        'page_obj': page_obj
     }
 
     return render(request, 'index.html', context)
