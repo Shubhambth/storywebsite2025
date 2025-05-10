@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,15 +11,18 @@
         .sharp-corners {
             border-radius: 0 !important;
         }
+
         .post-card {
             transition: all 0.3s ease;
         }
+
         .post-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
         }
     </style>
 </head>
+
 <body class="bg-yellow-50 font-sans">
     <!-- Navbar -->
     <header class="bg-yellow-900 shadow-lg sticky top-0 z-50">
@@ -29,14 +33,24 @@
                     Hindi Sex Stories
                 </a>
                 <ul class="hidden lg:flex space-x-8">
-                    <li><a href="/" class="text-gray-200 hover:text-yellow-300 font-medium transition-colors duration-200">Home</a></li>
-                    <li><a href="/#popular-posts" class="text-gray-200 hover:text-yellow-300 font-medium transition-colors duration-200">Popular Posts</a></li>
-                    <li><a href="/#categories" class="text-gray-200 hover:text-yellow-300 font-medium transition-colors duration-200">Categories</a></li>
-                    <li><a href="{% url 'contact' %}" class="text-gray-200 hover:text-yellow-300 font-medium transition-colors duration-200">Contact</a></li>
+                    <li><a href="/"
+                            class="text-gray-200 hover:text-yellow-300 font-medium transition-colors duration-200">Home</a>
+                    </li>
+                    <li><a href="/#popular-posts"
+                            class="text-gray-200 hover:text-yellow-300 font-medium transition-colors duration-200">Popular
+                            Posts</a></li>
+                    <li><a href="/#categories"
+                            class="text-gray-200 hover:text-yellow-300 font-medium transition-colors duration-200">Categories</a>
+                    </li>
+                    <li><a href="{% url 'contact' %}"
+                            class="text-gray-200 hover:text-yellow-300 font-medium transition-colors duration-200">Contact</a>
+                    </li>
                 </ul>
                 <button id="menu-toggle" class="block lg:hidden text-gray-200 focus:outline-none">
-                    <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"/>
+                    <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16m-7 6h7" />
                     </svg>
                 </button>
             </nav>
@@ -44,10 +58,18 @@
         <div id="mobile-menu" class="hidden lg:hidden bg-yellow-800 shadow-inner">
             <div class="container mx-auto px-4">
                 <ul class="py-4 space-y-4">
-                    <li><a href="/" class="block text-gray-200 hover:text-yellow-300 font-medium transition-colors duration-200">Home</a></li>
-                    <li><a href="/#popular-posts" class="block text-gray-200 hover:text-yellow-300 font-medium transition-colors duration-200">Popular Posts</a></li>
-                    <li><a href="/#categories" class="block text-gray-200 hover:text-yellow-300 font-medium transition-colors duration-200">Categories</a></li>
-                    <li><a href="#about" class="block text-gray-200 hover:text-yellow-300 font-medium transition-colors duration-200">About</a></li>
+                    <li><a href="/"
+                            class="block text-gray-200 hover:text-yellow-300 font-medium transition-colors duration-200">Home</a>
+                    </li>
+                    <li><a href="/#popular-posts"
+                            class="block text-gray-200 hover:text-yellow-300 font-medium transition-colors duration-200">Popular
+                            Posts</a></li>
+                    <li><a href="/#categories"
+                            class="block text-gray-200 hover:text-yellow-300 font-medium transition-colors duration-200">Categories</a>
+                    </li>
+                    <li><a href="#about"
+                            class="block text-gray-200 hover:text-yellow-300 font-medium transition-colors duration-200">About</a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -64,39 +86,45 @@
             <div class="w-16 h-1 bg-yellow-600 mt-2"></div>
         </div>
 
+        <script async type="application/javascript" src="https://a.magsrv.com/ad-provider.js"></script>
+        <ins class="eas6a97888e2" data-zoneid="5607548"></ins>
+        <script>(AdProvider = window.AdProvider || []).push({ "serve": {} });</script>
         <!-- Posts Section -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {% if posts %}
-                {% for post in posts %}
-                <div class="bg-yellow-100 shadow-md sharp-corners p-6 post-card border-t-4 border-yellow-600">
-                    <h2 class="text-xl font-bold mb-3">
-                        <a href="{% url 'detailpost' post.slug%}" class="text-gray-800 hover:text-yellow-700">{{ post.title }}</a>
-                    </h2>
-                    <p class="text-gray-700 text-sm mb-4">{{ post.content| safe | truncatewords:20 }}</p>
-                    <div class="flex justify-between items-center">
-                        <span class="text-gray-500 text-xs flex items-center">
-                            <i class="far fa-eye mr-1"></i> {{ post.views }} views
-                        </span>
-                        <a href="{% url 'detailpost' post.slug%}" class="text-yellow-700 hover:text-yellow-900 text-sm font-medium flex items-center">
-                            Read More <i class="fas fa-arrow-right ml-1"></i>
-                        </a>
-                    </div>
+            {% for post in posts %}
+            <div class="bg-yellow-100 shadow-md sharp-corners p-6 post-card border-t-4 border-yellow-600">
+                <h2 class="text-xl font-bold mb-3">
+                    <a href="{% url 'detailpost' post.slug%}" class="text-gray-800 hover:text-yellow-700">{{ post.title
+                        }}</a>
+                </h2>
+                <p class="text-gray-700 text-sm mb-4">{{ post.content| safe | truncatewords:20 }}</p>
+                <div class="flex justify-between items-center">
+                    <span class="text-gray-500 text-xs flex items-center">
+                        <i class="far fa-eye mr-1"></i> {{ post.views }} views
+                    </span>
+                    <a href="{% url 'detailpost' post.slug%}"
+                        class="text-yellow-700 hover:text-yellow-900 text-sm font-medium flex items-center">
+                        Read More <i class="fas fa-arrow-right ml-1"></i>
+                    </a>
                 </div>
-                {% endfor %}
+            </div>
+            {% endfor %}
+
             {% else %}
-                <div class="col-span-full text-center py-12">
-                    <i class="far fa-folder-open text-4xl text-gray-400 mb-4"></i>
-                    <p class="text-gray-500 text-lg">No posts available in this category.</p>
-                </div>
+            <div class="col-span-full text-center py-12">
+                <i class="far fa-folder-open text-4xl text-gray-400 mb-4"></i>
+                <p class="text-gray-500 text-lg">No posts available in this category.</p>
+            </div>
             {% endif %}
         </div>
 
         <!-- Pagination -->
-        
+
     </main>
 
     <!-- Newsletter -->
-    
+
 
     <!-- Footer -->
     <footer id="about" class="bg-yellow-900 text-white py-8">
@@ -104,15 +132,23 @@
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div>
                     <h3 class="text-lg font-bold mb-4">About Us</h3>
-                    <p class="text-gray-300">A collection of the best Hindi stories from various categories for your reading pleasure.</p>
+                    <p class="text-gray-300">A collection of the best Hindi stories from various categories for your
+                        reading pleasure.</p>
                 </div>
                 <div>
                     <h3 class="text-lg font-bold mb-4">Quick Links</h3>
                     <ul class="space-y-2">
-                        <li><a href="/" class="text-gray-300 hover:text-yellow-300 transition-colors duration-200">Home</a></li>
-                        <li><a href="/#popular-posts" class="text-gray-300 hover:text-yellow-300 transition-colors duration-200">Popular Posts</a></li>
-                        <li><a href="/#categories" class="text-gray-300 hover:text-yellow-300 transition-colors duration-200">Categories</a></li>
-                        <li><a href="{% url 'contact' %}" class="text-gray-300 hover:text-yellow-300 transition-colors duration-200">Contact</a></li>
+                        <li><a href="/"
+                                class="text-gray-300 hover:text-yellow-300 transition-colors duration-200">Home</a></li>
+                        <li><a href="/#popular-posts"
+                                class="text-gray-300 hover:text-yellow-300 transition-colors duration-200">Popular
+                                Posts</a></li>
+                        <li><a href="/#categories"
+                                class="text-gray-300 hover:text-yellow-300 transition-colors duration-200">Categories</a>
+                        </li>
+                        <li><a href="{% url 'contact' %}"
+                                class="text-gray-300 hover:text-yellow-300 transition-colors duration-200">Contact</a>
+                        </li>
                     </ul>
                 </div>
                 <!-- <div>
@@ -135,7 +171,13 @@
             </div>
         </div>
     </footer>
+    <script async type="application/javascript" src="https://a.pemsrv.com/ad-provider.js"></script>
+    <ins class="eas6a97888e35" data-zoneid="5607550"></ins>
+    <script>(AdProvider = window.AdProvider || []).push({ "serve": {} });</script>
 
+    <script async type="application/javascript" src="https://a.magsrv.com/ad-provider.js"></script> 
+ <ins class="eas6a97888e31" data-zoneid="5607554"></ins> 
+ <script>(AdProvider = window.AdProvider || []).push({"serve": {}});</script>
     <!-- Mobile Menu Toggle Script -->
     <script>
         const menuToggle = document.getElementById('menu-toggle');
@@ -145,4 +187,5 @@
         });
     </script>
 </body>
+
 </html>
